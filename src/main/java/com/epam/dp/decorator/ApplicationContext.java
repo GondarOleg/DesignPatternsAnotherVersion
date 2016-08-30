@@ -17,11 +17,12 @@ public class ApplicationContext {
     }
 
     public Object getBean(final String id) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-
-
         Object o = beanFactory.getBean(id);
-        if (o instanceof BeanPostProcessor) {
+        return InjectRandomIntBeanPostProcessor(o);
+    }
 
+    private Object InjectRandomIntBeanPostProcessor(Object o) throws IllegalAccessException {
+        if (o instanceof BeanPostProcessor) {
             Field[] fields = o.getClass().getDeclaredFields();
             for (Field field : fields) {
                 if (field.isAnnotationPresent(InjectRandomInt.class)) {

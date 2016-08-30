@@ -8,16 +8,18 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
 
-        loadApplContext("TestClass");
-        loadApplContext("AnotherClass");
-        loadApplContext("AnotherOneClass");
-        SomeClass someClass = (SomeClass) new ApplicationContext(new BeanFactory()).getBean("SomeClass");
+        ApplicationContext applicationContext = new ApplicationContext(new BeanFactory());
+
+        loadApplicationContext("TestClass", applicationContext);
+        loadApplicationContext("AnotherClass", applicationContext);
+        loadApplicationContext("AnotherOneClass", applicationContext);
+        SomeClass someClass = (SomeClass) applicationContext.getBean("SomeClass");
         System.out.println(someClass.getTest());
 
     }
 
-    public static void loadApplContext(String className) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
-        ApplicationContext applicationContext = new ApplicationContext(new BeanFactory());
+    public static void loadApplicationContext(String className, ApplicationContext applicationContext) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+
         BeanPostProcessor beanPostProcessor = (BeanPostProcessor) applicationContext.getBean(className);
         beanPostProcessor.showInt();
     }
