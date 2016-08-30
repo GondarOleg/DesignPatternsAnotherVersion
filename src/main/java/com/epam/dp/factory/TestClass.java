@@ -12,14 +12,14 @@ public class TestClass implements BeanPostProcessor {
 
 
     @InjectRandomInt
-    int test;
+    int a;
 
-    public void setTest(int test) {
-        this.test = test;
+    public void setA(int a) {
+        this.a = a;
     }
 
     @Override
     public void showInt() {
-        System.out.println("Value in TestClass is: " + test);
+        System.out.println("In TestClass int setted: " + a);
     }
 }

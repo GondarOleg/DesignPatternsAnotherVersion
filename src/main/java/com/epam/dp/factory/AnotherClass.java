@@ -17,6 +17,6 @@ public class AnotherClass implements BeanPostProcessor{
 
     @Override
     public void showInt() {
-        System.out.println("In AnotherClass int is: a = "+ a + ", b = " + b );
+        System.out.println("In AnotherClass ints setted: a = "+ a + ", b = " + b );
     }
 }

@@ -1,11 +1,9 @@
-package com.epam.dp.factory;
+package com.epam.dp.decorator;
 
-import com.epam.dp.decorator.ApplicationContext;
-import com.epam.dp.decorator.BeanPostProcessor;
+import com.epam.dp.factory.BeanFactory;
+import com.epam.dp.factory.SomeClass;
 
-/**
- * @author Ivan_Zhuravel
- */
+
 public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
@@ -13,7 +11,8 @@ public class Main {
         loadApplContext("TestClass");
         loadApplContext("AnotherClass");
         loadApplContext("AnotherOneClass");
-
+        SomeClass someClass = (SomeClass) new ApplicationContext(new BeanFactory()).getBean("SomeClass");
+        System.out.println(someClass.getTest());
 
     }
 

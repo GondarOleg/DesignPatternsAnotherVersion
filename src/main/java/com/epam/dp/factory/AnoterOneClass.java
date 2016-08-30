@@ -19,7 +19,7 @@ public class AnoterOneClass implements BeanPostProcessor {
 
     @Override
     public void showInt() {
-        System.out.println("In AnoterOneClass int is" +
+        System.out.println("In AnoterOneClass ints setted:" +
                 " a = " + a +
                 ", b = " + b +
                 ", c = " + c);
