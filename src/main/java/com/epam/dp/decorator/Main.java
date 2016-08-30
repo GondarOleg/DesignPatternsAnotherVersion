@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static void loadApplicationContext(String className, ApplicationContext applicationContext) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
-
+        //Function just for test
         BeanPostProcessor beanPostProcessor = (BeanPostProcessor) applicationContext.getBean(className);
         beanPostProcessor.showInt();
     }
