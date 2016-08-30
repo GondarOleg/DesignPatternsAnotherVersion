@@ -7,7 +7,7 @@ import com.epam.dp.decorator.InjectRandomInt;
  * Created by Oleg on 8/30/2016.
  */
 @Component("AnotherOneClass")
-public class AnoterOneClass implements BeanPostProcessor {
+public class AnotherOneClass implements BeanPostProcessor {
 
     @InjectRandomInt
     int a;
@@ -19,7 +19,7 @@ public class AnoterOneClass implements BeanPostProcessor {
 
     @Override
     public void showInt() {
-        System.out.println("In AnoterOneClass ints setted:" +
+        System.out.println("In AnotherOneClass ints setted:" +
                 " a = " + a +
                 ", b = " + b +
                 ", c = " + c);
